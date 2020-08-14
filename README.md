@@ -1,0 +1,1 @@
+# KloudOne_Docker_Compose_Task
