@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  product-service:
+    build: ./Web_product
+    volumes:
+      - ./Web_product:/usr/src/app
+    ports:
+      - 7002:80
+
+  website:
+    image: php:apache
+    volumes:
+      - ./product_ui:/var/www/html
+    ports:
+      - 8002:80
+    depends_on:
+      - product-service
